@@ -1,0 +1,285 @@
+\documentclass{article}
+% Question 3
+\usepackage{graphicx}
+\usepackage[margin=1.5in]{geometry}
+
+\begin{document}
+
+\begin{center}
+	% \vspace*{1cm}
+
+	\Huge
+	\textbf{Computer Networks Lab}\\
+
+	% \vspace*{1.5 cm}
+	\huge
+	Assignment No. 1 \\
+
+	\vspace*{1.5cm}
+	\Large
+	\textbf{Submitted By:}\\
+	\LARGE
+	Ashish Kumar Poddar\\
+	\large 
+	Roll No.: 150123049\\
+	Mathematics and Computing\\
+	IIT Guwahati\\
+	Date - $20^{th}$ January, 2018
+
+\end{center}
+	
+	% \newpage
+	\section*{Question 1}
+	\normalsize
+	\paragraph{}Unix has a variety of commands that enable us to specify the behaviour of our \texttt{ECHO\_REQUEST}s in every way possible. Some of the ones required are listed as below. 
+
+		\begin{description}
+	
+		\item[$\bullet$] \texttt{ping <IP Address> -c N} - This UNIX command is used to specify the number of echo requests to send with ping. Here, N is the number of requests to send.
+
+		\item[$\bullet$] \texttt{ping <IP Address> -i T} - This command enables us to change the time interval between subsequent echo requests to T seconds.
+
+		\item[$\bullet$] \texttt{ping -f <IP Address>} - This command floods the receiver as it sends echo requests continually without waiting for a reply. Normal users are not allowed to use this command. Only superusers can use this. 
+
+		\item[$\bullet$] \texttt{ping -s S <IP Address>} - This command changes the packet size from the standard 64 bits to (S+8) bits. If PacketSize is set to 64 bits, the total packet size becomes 72 bits. 
+
+	\end{description}
+ 
+	\section*{Question 2}
+	For the experiment, I have used the hosts of 5 institutes worldwide. They are listed along with their RTTs -  
+
+
+	\begin{center}
+	\begin{tabular}{ |c|c|c|c|c|c| } 
+	 \hline
+	 & \texttt{iitg.ac.in} & \texttt{berkeley.edu} & \texttt{stanford.edu} & \texttt{web.mit.edu} & \texttt{yale.edu}\\ 
+	 01:00 AM & 379.078 & 69.878 & 66.360 & 13.741 & 13.307 \\ 
+	 06:00 PM & 280.512 & 69.427 & 66.718 & 5.660 & 12.940 \\ 
+	 12:00 PM & 268.480 & 69.649 & 66.367 & 20.058 & 12.983 \\ 
+	 \hline
+	\end{tabular}
+	\end{center}
+
+	% \begin{description}
+	% 	\item[$\bullet$] iitg.ac.in/ - This is the website of IIT Guwahati. The RTT for this is 309.357 ms.
+
+	% 	\item[$\bullet$] berkeley.edu/ - This is the website of University of California, Berkeley. The RTT here was found to be 69.651 ms.
+
+	% 	\item[$\bullet$] stanford.edu/ - This is the website of Stanford University. The RTT of this website is 66.482 ms. 
+
+	% 	\item[$\bullet$] web.mit.edu/ - This is the website of MIT, Cambridge. The RTT here is 13.1530 ms. 
+
+	% 	\item[$\bullet$] yale.edu/ - This is the website of Yale University. The RTT is 13.077 ms.
+
+	% \end{description}
+
+	\paragraph{}As is evident, there is a strong relationsip between the geographical distance and the RTTs.
+
+	\begin{figure}[h!]
+
+	\begin{center}
+
+	\includegraphics[scale = 0.3]{ques2.jpg}
+	\caption{RTT v/s PacketSize Graph}
+	{\footnotesize This graph resulted from pinging the \texttt{yale.edu} site. \par}
+
+	\end{center}
+
+	\end{figure}
+
+	The graph implies that the RTT varies almost linearly with the size of the packets transmitted.
+
+	It was observed that the RTTs for some servers were higher during certain times of the day while for some others were higher for some other times of the day. This may be attributed to the fact that the server may be handling an increased number of requests at those times of the day. 
+
+	\section*{Question 3}
+
+	We selected the address \texttt{202.141.80.14} for our task in this question. Here are the answers as required.
+
+		The packet loss rate for command one was 0\% while that for the second command was 3\%.
+
+		The following table provides the values for the two commands as required. 
+		\vspace{0.5cm}
+
+		\begin{tabular}{|l|c|r|p{3cm}|}
+ 			\hline
+			Maximum & Minimum & Mean & Median\\
+			\hline
+ 			2.57 & 0.161 & 0.303 & 0.282\\
+ 			\hline
+ 			0.648 & 0.179 & 0.299 & 0.288\\
+ 			\hline
+		\end{tabular}
+		\vspace{0.5cm}
+
+	\begin{figure}[h!]
+
+	\begin{center}
+
+	\includegraphics[scale = 0.3]{ques3.jpg}
+	\caption{Question 3}
+
+	\end{center}
+
+	\end{figure}
+	% \clearpage
+	% From the two graphs, we can see that while the values swarm in the same region for the most part, the first one has some outliers while the second one does not have any large outlier.	Another difference is that there is no packet loss in the first case, but there is some packet loss in the second case. 
+
+	The -n command directs the system to use numeric output only and it does not try to look up symbolic names for host addresses. \texttt{-p ff00} fills the packet with byte stuffing ff00. The -p command can specify up to 16 pad bytes per packet we send. It is useful for diagnosting data dependent problems.
+
+	\section*{Question 4}
+	The \texttt{ifconfig} command shows the details of the network interfaces that are up and running in a computer.
+	The \texttt{Link encap} show the type of interface of a network. The \texttt{HWaddr} shows the MAC address of the computer.
+	The \texttt{inet addr} is the IP and the \texttt{Bcast} denotes the broadcast address. The \texttt{Mask} is the network Mask. \texttt{UP} indicates the required kernel modules have been loaded while \texttt{BROADCAST} denotes that the device supports broadcasting. \texttt{RUNNING} means the interface is ready to accept and \texttt{MULTICAST} means that multicasting is allowed. The \texttt{MTU} shows the Maximum Transmission Unit i.e the size of the received packets. \texttt{Metric} shows the priority of the device. 
+
+	\paragraph{} \texttt{RX Packets} and \texttt{TX Packets} show the total number of packets received and transmitted respectively. \texttt{collisions} show a positive value only if there is the packets are colliding while traversing the network. This is a sign of network congestion. \texttt{txqueuelen} denotes the length of the transmit queue of the device. \texttt{RX bytes} and \texttt{TX bytes} show the amount of data that has been received and transmitted respectively. \texttt{Interrupt} specifies the interrupt number the interface is using.
+
+	\paragraph{} \texttt{route} command is used to show or manipulate the IP routing table. It can set up static routes to specific hosts or networks. It has a lot of useful commands. \texttt{route -F} operate on Kernel's FIB routing table. \texttt{route-C} operates on the Kernel routing cache. \texttt{route -v} selects the verbose operation. \texttt{route add} and \texttt{route del} are used to add and delete a route respectively. 
+
+	 % If a packetcomes from an address not listed, then the default \texttt{Gateway} will be used and the packet will be routed to that gateway. Else, the packet will be routed according to its unique gateway. The options used with the route command are used mainly to manipulate and change the Kernel IP routing table.
+
+	\section*{Question 5}
+
+	Netstat is a command-line network utility tool that can display nework connections for the TCP, routing tables and a number of network interface and network protocol statistics. The \texttt{netstat -at} command is used to display the list of established tcp connections.	
+
+\footnotesize
+% \begin{lstlisting}
+\begin{verbatim}
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 localhost:mysql         *:*                     LISTEN     
+tcp        0      0 Maths56:domain          *:*                     LISTEN     
+tcp        0      0 *:ssh                   *:*                     LISTEN     
+tcp        0      0 172.16.68.56:51666      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51756      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51702      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51752      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51736      202.141.80.24:3128      ESTABLISHED
+tcp       32      0 172.16.68.56:51758      202.141.80.24:3128      CLOSE_WAIT 
+tcp        0      0 172.16.68.56:51734      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51644      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51650      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51552      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51686      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51652      202.141.80.24:3128      ESTABLISHED
+tcp      390      0 172.16.68.56:51748      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51718      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51502      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51754      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51704      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51660      202.141.80.24:3128      ESTABLISHED
+tcp       32      0 172.16.68.56:51750      202.141.80.24:3128      CLOSE_WAIT 
+tcp        0      0 172.16.68.56:51646      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51624      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51740      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51706      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51746      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51712      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51432      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51664      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51546      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51760      202.141.80.24:3128      TIME_WAIT  
+tcp        0      0 172.16.68.56:51630      202.141.80.24:3128      ESTABLISHED
+tcp        0      0 172.16.68.56:51744      202.141.80.24:3128      ESTABLISHED
+tcp6       0      0 [::]:61415              [::]:*                  LISTEN     
+tcp6       0      0 [::]:http               [::]:*                  LISTEN     
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN     
+tcp6       0      0 [::]:31415              [::]:*                  LISTEN     
+
+\end{verbatim}
+% \end{lstlisting}
+\normalsize
+The \texttt{Proto} displays the protocol of the connection while the \texttt{Recv-Q} and \texttt{Send-Q} list the number of bytes that are currently in a receive and a send buffer respectively. The \texttt{local address} lists the IP of the local computer(i.e. my device) and the ports which are connected to the foreign address, i.e. the remote computers to which the connection is present. The \texttt{State} column lists the current state of the connection. 
+
+The \texttt{netstat -r} is similar to the \texttt{route} command and lists the Kernel IP routing table. The \texttt{Destination} column identifies the destination network. The \texttt{Gateway} column identifies the defined gateway for the specified network, to which the packet is to be forwarded. The \texttt{Genmask} lists the netmask for the network. The \texttt{Iface} column shows the network interface. Flas lists different symbols having different meaning for the routing of the packets. Metric is the distance to the user counted in hops. \texttt{Ref} is the number of references to the route. 
+
+\texttt{netstat -i} can be used to display the network interface status. My computer has two interfaces - the \texttt{Ethernet} interface and the \texttt{local loopback}. 
+
+The \texttt{loopback interface} is used to identify the device. A client requesting data from a network service running on the same machine can use \texttt{127.0.0.1} to reach instead of any real IP address that is configured to it and this is guranteed to work regardless of the state of the physical interfaces. This is the main function of the \texttt{loopback interface}. 
+
+\section*{Question 6}
+
+The following table lists the hopcounts for the websites at different hours of the day.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ & \texttt{iitg.ac.in} & \texttt{berkeley.edu} & \texttt{stanford.edu} & \texttt{web.mit.edu} & \texttt{yale.edu}\\ 
+ 01:00 AM & 16 & 12 & 11 & 6 & 4 \\ 
+ 08:00 PM & 16 & 12 & 11 & 6 & 4 \\ 
+ 12:00 PM & 16 & 12 & 11 & 4 & 4 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+In the above table, we see that while all other websites stick to their routes in all three instances, the \texttt{web.mit.edu} site has only 4 hopcounts in one of the instances instead of 6. The two routes have no hop in common here.
+
+The route to the same host changes at different times of the day in some cases. This is because of the fact that the Packets that are being sent don't always follow the same route. There are numerous paths to the same host and the packet can take any path at any given instant of time. 
+
+We have not faced any cases where the complete path was not found. But, this situation can occur in various situations. The basic condition when it occurs it is when any intermediate router does not respond to the ping at all. This may occur due to a lot of reasons. The router may be busy or the ping may have hit a firewall. 
+
+It is not possible to find the path to hosts which fail to respond to the ping experiment because the traceroute works using ping.
+
+\section*{Question 7}
+The \texttt{arp} command shows the full arp table for our machine. Tha arp table maps the \texttt{IP address} with the physical or MAC address of the machine. The \texttt{Address} and the \texttt{HWaddress} thus represent the respective values. The \texttt{Iface} and the \texttt{HWtype} show the interface and the network protocol types respectively. The \texttt{Flag} indicates whether the \texttt{HWaddress} has been learned, manually set, published or incomplete.
+
+A normal user is not permitted to add, delete or change entries in the arp table. When we try to do this, we get the \texttt{SIOCSARP: Operation not permitted} error. It is possible only with sudo or netadmin privileges. 
+
+With sudo privileges, we can run the \texttt{sudo arp -d <IP address>} to delete the specific entry by the IP Address. For adding an entry, we need to run the \texttt{sudo arp -s <IP Address> HWAddress} to add an entry to the table. Adding two entries has the following effect.
+
+{\footnotesize
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+Address	&    HWtype & HWaddress &   Flags & Mask &	Iface\\
+10.4.23.4  & ether &  ff:ff:ff:ff:ff:00 &    CM & & eth0  \\
+10.4.2.7  &  ether & ff:ff:ff:ff:ff:ff &  CM & & eth0 \\
+10.4.0.254	& ether & 4c:4e:35:97:1e:ef & C & & eth0\\
+ \hline
+\end{tabular}
+\end{center}
+}
+After Adding 2 two entries into the ARP table\\
+{ \footnotesize
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+Address	&    HWtype & HWaddress &   Flags & Mask &	Iface\\
+10.4.23.4  & ether &  ff:ff:ff:ff:ff:00 &    CM & & eth0  \\
+10.4.2.10 &  ether &  ff:ff:ff:00:11:a7 & C	& & eth0 \\
+10.4.2.7  &  ether & ff:ff:ff:ff:ff:ff &  CM & & eth0 \\
+10.4.0.254	& ether & 4c:4e:35:97:1e:ef & C & & eth0\\
+10.4.2.1 &  ether & 4c:4e:35:21:18:fe & CM & & eth0\\
+ \hline
+\end{tabular}
+\end{center}
+}
+
+The \texttt{arp} cache entry timeout is 60 seconds. It can be viewed by running the command \texttt{cat /proc/sys/net/ipv4/neigh/default/gc\_stale\_time} in the terminal. 
+
+
+Having two IP addresses with same MAC address is possible in cases when we use a virtual machine like vmware. This does not cause any conflict. Since the Hub or Switch maintains an \texttt{IP Address} to \texttt{MAC Address} table, each IP has only once \texttt{MAC Address} and it is routed accordingly thus avoiding any conflict.
+
+\section*{Question 8}
+
+Here, we have to query our LAN to discover which hosts are online. We take a range of hosts \texttt{10.4.22.1-23} in our local network and use the \texttt{nmap -n -sP 10.4.22.1-23} to do so. As is clear, the number of computers which are online are fewer during the day than the night. This may be attributed to the fact that students attend classes during the day apart from not having access to the internet services during the day.
+
+	\begin{figure}[h!]
+
+	\begin{center}
+
+	\includegraphics[scale = 0.4]{ques8.jpg}
+	\caption{Question 8}
+	{\footnotesize No. of Hosts online v/s Time of the day \par}
+
+	\end{center}
+
+	\end{figure}
+
+
+\end{document}
+
+
+
+
+
+
